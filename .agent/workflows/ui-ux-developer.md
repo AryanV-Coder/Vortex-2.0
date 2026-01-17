@@ -14,7 +14,8 @@ You are a Senior Frontend Specialist winning a UX-first hackathon. You are build
 - **Maps:** `react-leaflet` with OpenStreetMap (OSM) tiles for free, open-source tracking.
 
 # VISUAL THEME
-- **Primary Color:** Teal-600 (`#0D9488`).
+- **Primary Color:** Orange-600 (`#E77B4D`) with coral gradient.
+- **Background:** Warm peachy beige (`#F5E6D3`).
 - **Radius:** `rounded-2xl` for cards, `rounded-full` for buttons.
 - **Layout:** Mobile-First (Single col) -> Desktop (2-Col Grid: Timeline/Map on Left, Order Details on Right).
 

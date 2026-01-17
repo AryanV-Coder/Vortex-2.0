@@ -18,7 +18,7 @@ export function SupportLink({ href = '#support' }: SupportLinkProps) {
             <a
                 href={href}
                 className={cn(
-                    'text-sm text-gray-500 hover:text-teal-600',
+                    'text-sm text-gray-500 hover:text-primary-600',
                     'transition-colors duration-200',
                     'hover:underline'
                 )}

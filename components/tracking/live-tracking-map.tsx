@@ -139,11 +139,11 @@ export function LiveTrackingMap({
             <div className="p-4 border-t border-gray-200">
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-gray-700">Delivery Progress</span>
-                    <span className="text-sm font-bold text-teal-600">{Math.round(deliveryProgress)}%</span>
+                    <span className="text-sm font-bold text-primary-600">{Math.round(deliveryProgress)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                     <motion.div
-                        className="bg-teal-600 h-2 rounded-full"
+                        className="bg-primary-600 h-2 rounded-full"
                         initial={{ width: 0 }}
                         animate={{ width: `${deliveryProgress}%` }}
                         transition={{ duration: 0.5 }}

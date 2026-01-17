@@ -26,7 +26,7 @@ export function DeliveryPartnerCard({
             )}
         >
             {/* Avatar */}
-            <div className="w-14 h-14 flex-shrink-0 rounded-full bg-teal-100 flex items-center justify-center">
+            <div className="w-14 h-14 flex-shrink-0 rounded-full bg-primary-100 flex items-center justify-center">
                 {photo ? (
                     <img
                         src={photo}
@@ -34,7 +34,7 @@ export function DeliveryPartnerCard({
                         className="w-full h-full rounded-full object-cover"
                     />
                 ) : (
-                    <User className="w-7 h-7 text-teal-600" />
+                    <User className="w-7 h-7 text-primary-600" />
                 )}
             </div>
 
@@ -45,7 +45,7 @@ export function DeliveryPartnerCard({
 
                 {/* ETA */}
                 {estimatedArrival && (
-                    <div className="flex items-center gap-1.5 mt-2 text-teal-600">
+                    <div className="flex items-center gap-1.5 mt-2 text-primary-600">
                         <Clock className="w-4 h-4" />
                         <span className="text-sm font-medium">
                             Est. arrival: {new Date(estimatedArrival).toLocaleTimeString('en-IN', {
@@ -62,10 +62,10 @@ export function DeliveryPartnerCard({
                 href={`tel:${phone}`}
                 className={cn(
                     'w-12 h-12 flex-shrink-0',
-                    'bg-teal-600 text-white',
+                    'bg-primary-600 text-white',
                     'rounded-full',
                     'flex items-center justify-center',
-                    'hover:bg-teal-700 transition-colors',
+                    'hover:bg-primary-700 transition-colors',
                     'shadow-md'
                 )}
                 aria-label="Call delivery partner"

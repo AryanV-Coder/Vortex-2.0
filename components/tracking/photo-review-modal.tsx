@@ -61,7 +61,7 @@ export function PhotoReviewModal({
                                     'flex items-center gap-1.5 px-3 py-1 rounded-full',
                                     isUrgent
                                         ? 'bg-red-100 text-red-700'
-                                        : 'bg-teal-100 text-teal-700'
+                                        : 'bg-primary-100 text-primary-700'
                                 )}
                             >
                                 <Clock className="w-4 h-4" />
@@ -104,10 +104,10 @@ export function PhotoReviewModal({
                             <button
                                 onClick={onAccept}
                                 className={cn(
-                                    'bg-teal-600 text-white',
+                                    'bg-primary-600 text-white',
                                     'rounded-full px-6 py-3',
                                     'font-semibold',
-                                    'hover:bg-teal-700 transition-colors',
+                                    'hover:bg-primary-700 transition-colors',
                                     'flex items-center justify-center gap-2'
                                 )}
                             >

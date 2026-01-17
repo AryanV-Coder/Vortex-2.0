@@ -32,7 +32,7 @@ export function OrderHeader({
             )}
         >
             {/* Product Icon */}
-            <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-teal-50 rounded-xl text-2xl">
+            <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-50 rounded-xl text-2xl">
                 {icon}
             </div>
 

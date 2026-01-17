@@ -61,12 +61,12 @@ export function TrackingNavbar({
                     disabled={!canEdit}
                     className={cn(
                         'flex items-center gap-2',
-                        'bg-white text-teal-600',
-                        'border-2 border-teal-600',
+                        'bg-white text-primary-600',
+                        'border-2 border-primary-600',
                         'rounded-full px-6 py-3',
                         'font-semibold text-sm',
                         'transition-all duration-200',
-                        'hover:bg-teal-50 hover:scale-105',
+                        'hover:bg-primary-50 hover:scale-105',
                         'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100',
                         !canEdit && 'grayscale border-gray-300 text-gray-400'
                     )}

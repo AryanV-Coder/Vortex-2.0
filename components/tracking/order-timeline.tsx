@@ -92,7 +92,7 @@ export function OrderTimeline({
                                         'w-10 h-10 rounded-full flex items-center justify-center',
                                         'z-10',
                                         step.isComplete
-                                            ? 'bg-teal-600 text-white'
+                                            ? 'bg-primary-600 text-white'
                                             : 'bg-gray-200 text-gray-400 border-2 border-dashed'
                                     )}
                                 >
@@ -105,7 +105,7 @@ export function OrderTimeline({
                                         className={cn(
                                             'w-0.5 flex-1 mt-2',
                                             step.isComplete && steps[index + 1]?.isComplete
-                                                ? 'bg-teal-600'
+                                                ? 'bg-primary-600'
                                                 : 'bg-gray-300 border-l-2 border-dashed'
                                         )}
                                         style={{ minHeight: '40px' }}
@@ -125,7 +125,7 @@ export function OrderTimeline({
                                     {step.description}
                                 </p>
                                 {step.subtext && (
-                                    <p className="text-xs text-teal-600 font-medium mt-1">
+                                    <p className="text-xs text-primary-600 font-medium mt-1">
                                         {step.subtext}
                                     </p>
                                 )}

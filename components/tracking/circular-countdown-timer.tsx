@@ -60,7 +60,7 @@ export function CircularCountdownTimer({
                         strokeLinecap="round"
                         className={cn(
                             'transition-colors duration-300',
-                            isUrgent ? 'text-red-500' : 'text-teal-600'
+                            isUrgent ? 'text-red-500' : 'text-primary-600'
                         )}
                         animate={isUrgent ? { scale: [1, 1.05, 1] } : {}}
                         transition={isUrgent ? { duration: 0.8, repeat: Infinity } : {}}

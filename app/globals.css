@@ -5,13 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --primary-teal: #0d9488;
-  --teal-light: #f0fdfa;
-  --teal-dark: #0f766e;
+  --primary-orange: #E77B4D;
+  --orange-light: #FFF5F0;
+  --orange-dark: #D2691E;
+  --background-peach: #F5E6D3;
 }
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-[#F5E6D3] text-gray-900;
 }
 
 @layer utilities {

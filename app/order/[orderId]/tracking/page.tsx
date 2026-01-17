@@ -122,7 +122,7 @@ export default function OrderTrackingPage() {
                             {/* Place Another Order Button */}
                             <a
                                 href="/place-order"
-                                className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md hover:shadow-lg"
+                                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md hover:shadow-lg"
                             >
                                 <span>Place Another Order</span>
                             </a>

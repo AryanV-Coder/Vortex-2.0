@@ -61,7 +61,7 @@ export function BillSummary({
             </div>
 
             {/* Total Payable */}
-            <div className="bg-teal-50 rounded-xl p-3 mb-4">
+            <div className="bg-primary-50 rounded-xl p-3 mb-4">
                 <div className="flex items-center justify-between">
                     <span className="font-bold text-gray-900 text-lg">Total Payable</span>
                     <span className="font-bold text-gray-900 text-2xl">
@@ -94,7 +94,7 @@ function BillRow({
             <span
                 className={cn(
                     'text-sm',
-                    isDiscount ? 'text-teal-600 font-semibold' : 'text-gray-600'
+                    isDiscount ? 'text-primary-600 font-semibold' : 'text-gray-600'
                 )}
             >
                 {label}
@@ -102,7 +102,7 @@ function BillRow({
             <span
                 className={cn(
                     'text-sm font-medium',
-                    isDiscount ? 'text-teal-600 font-bold' : 'text-gray-900'
+                    isDiscount ? 'text-primary-600 font-bold' : 'text-gray-900'
                 )}
             >
                 {isDiscount ? '- ' : ''}

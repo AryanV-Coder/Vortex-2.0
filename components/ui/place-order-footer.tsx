@@ -43,7 +43,7 @@ export function PlaceOrderFooter({
                     whileHover={!isLoading ? { scale: 1.05 } : {}}
                     whileTap={!isLoading ? { scale: 0.95 } : {}}
                     className={cn(
-                        'bg-gradient-to-r from-teal-600 to-teal-500',
+                        'bg-gradient-to-r from-primary-600 to-primary-500',
                         'text-white font-bold text-lg',
                         'rounded-2xl px-8 py-4',
                         'shadow-lg hover:shadow-xl',

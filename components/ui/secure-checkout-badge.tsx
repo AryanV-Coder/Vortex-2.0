@@ -12,7 +12,7 @@ export function SecureCheckoutBadge() {
             transition={{ duration: 0.3 }}
             className={cn(
                 'inline-flex items-center gap-1.5',
-                'bg-teal-600 text-white',
+                'bg-primary-600 text-white',
                 'rounded-full px-4 py-1.5',
                 'text-sm font-medium',
                 'shadow-sm'
