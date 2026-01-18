@@ -49,7 +49,7 @@ const calculateBillSummary = (items: CartItem[]) => {
     };
 };
 
-export const useOrderStore = create<OrderStore>((set, get) => ({
+export const useOrderStore = create<OrderStore>((set) => ({
     cartItems: mockCartItems,
     deliveryAddress: mockAddress,
     paymentMethod: 'UPI',

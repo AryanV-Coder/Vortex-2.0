@@ -14,7 +14,7 @@ interface CancellationReasonOptionProps {
 }
 
 export function CancellationReasonOption({
-    id,
+    id: _id,
     label,
     selected,
     onSelect,

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { cn, formatCurrency } from '@/lib/utils';
 
 interface OrderItemCardProps {
@@ -33,7 +34,14 @@ export function OrderItemCard({
             {/* Icon or Image */}
             <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-gray-100 rounded-lg text-2xl">
                 {imageUrl ? (
-                    <img src={imageUrl} alt={productName} className="w-full h-full object-cover rounded-lg" />
+                    <Image
+                        src={imageUrl}
+                        alt={productName}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover rounded-lg"
+                        unoptimized
+                    />
                 ) : (
                     <span>{icon || '📦'}</span>
                 )}

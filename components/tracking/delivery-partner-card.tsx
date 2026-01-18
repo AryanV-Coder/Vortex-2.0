@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Phone, Clock, User } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import type { DeliveryPartner } from '@/lib/mock-data';
 
@@ -28,10 +29,13 @@ export function DeliveryPartnerCard({
             {/* Avatar */}
             <div className="w-14 h-14 flex-shrink-0 rounded-full bg-primary-100 flex items-center justify-center">
                 {photo ? (
-                    <img
+                    <Image
                         src={photo}
                         alt={name}
                         className="w-full h-full rounded-full object-cover"
+                        width={56}
+                        height={56}
+                        unoptimized
                     />
                 ) : (
                     <User className="w-7 h-7 text-primary-600" />
