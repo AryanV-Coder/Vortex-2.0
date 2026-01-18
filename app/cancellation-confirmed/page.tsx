@@ -1,12 +1,13 @@
 'use client';
 
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { formatCurrency } from '@/lib/utils';
 import { cn } from '@/lib/utils';
 
-export default function CancellationConfirmedPage() {
+function CancellationContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -174,5 +175,17 @@ export default function CancellationConfirmedPage() {
                 ))}
             </motion.div>
         </div>
+    );
+}
+
+export default function CancellationConfirmedPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-gray-50">
+                <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+            </div>
+        }>
+            <CancellationContent />
+        </Suspense>
     );
 }
