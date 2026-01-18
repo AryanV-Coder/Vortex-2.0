@@ -19,9 +19,9 @@ export interface SimulationState {
     estimatedArrival: Date | null;
 }
 
-const GRACE_PERIOD_DURATION = 10; // seconds (reduced from 30 for faster demo)
-const PHOTO_REVIEW_DURATION = 20; // seconds
-const DELIVERY_DURATION = 20; // seconds for full delivery (reduced from 60)
+const GRACE_PERIOD_DURATION = 15; // seconds (reduced from 30 for faster demo)
+const PHOTO_REVIEW_DURATION = 15; // seconds
+const DELIVERY_DURATION = 10; // seconds for full delivery (reduced from 60)
 
 const STORAGE_KEY = 'order_simulation_state';
 

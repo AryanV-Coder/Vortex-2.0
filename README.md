@@ -50,7 +50,7 @@ npm run dev
 │   ├── order-item-card.tsx           # Product card component
 │   ├── bill-summary.tsx              # Billing breakdown card
 │   ├── delivery-address-inline.tsx   # Address display component
-│   ├── place-order-footer.tsx        # Fixed footer with CTA
+│   ├── -footer.tsx        # Fixed footer with CTA
 │   └── support-link.tsx              # Help link component
 ├── lib/
 │   ├── utils.ts                      # Utility functions (cn, formatCurrency)

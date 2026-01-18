@@ -16,128 +16,162 @@ export default function CancellationConfirmedPage() {
     const refundMethod = 'Bank Account';
 
     const handleTrackRefund = () => {
-        console.log('Track Refund Status clicked - navigating to refund tracking...');
-        // TODO: Navigate to refund status page when implemented
-        alert('Refund tracking will be available soon!');
+        router.push(`/refund-status/${orderId}`);
     };
 
-    const handleBackToOrders = () => {
-        router.push('/order/123/tracking');
+    const handlePlaceAnotherOrder = () => {
+        router.push('/place-order');
     };
 
     return (
-        <div className="min-h-screen bg-[#F5E6D3] flex items-center justify-center px-4 py-12">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-4">
             <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="max-w-md w-full text-center"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                    duration: 0.5,
+                    ease: [0.34, 1.56, 0.64, 1],
+                }}
+                className="w-full max-w-md relative"
             >
-                {/* Success Icon */}
-                <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{
-                        type: 'spring',
-                        stiffness: 200,
-                        damping: 15,
-                        delay: 0.2,
-                    }}
-                    className="mx-auto w-28 h-28 md:w-32 md:h-32 bg-primary-100 rounded-full flex items-center justify-center mb-6"
-                    role="img"
-                    aria-label="Success"
-                >
+                {/* Main Card */}
+                <div className="bg-white rounded-3xl shadow-2xl p-8 text-center">
+                    {/* Animated Check Icon */}
+                    <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{
+                            delay: 0.2,
+                            duration: 0.6,
+                            type: 'spring',
+                            stiffness: 200,
+                            damping: 15,
+                        }}
+                        className="mx-auto w-24 h-24 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mb-6 shadow-lg"
+                    >
+                        <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{
+                                delay: 0.5,
+                                duration: 0.3,
+                                type: 'spring',
+                                stiffness: 300,
+                            }}
+                        >
+                            <Check className="w-14 h-14 text-white stroke-[3]" />
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Success Message */}
+                    <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                    >
+                        <h1 className="text-3xl font-bold text-gray-900 mb-3">
+                            Cancellation Confirmed
+                        </h1>
+                        <p className="text-sm text-gray-500 font-medium mb-4">
+                            Order ID: <span className="text-emerald-600">{orderId}</span>
+                        </p>
+                        <p className="text-base font-medium text-gray-900 mb-2">
+                            Refund Method: {refundMethod}
+                        </p>
+                        <p className="text-base text-gray-600 leading-relaxed px-4">
+                            Your refund of <span className="font-semibold text-gray-900">{formatCurrency(refundAmount)}</span> will be processed within{' '}
+                            <span className="font-medium">5-7 business days</span>.
+                        </p>
+                    </motion.div>
+
+                    {/* Decorative Bouncing Dots */}
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 300,
-                            damping: 20,
-                            delay: 0.5,
-                        }}
+                        transition={{ delay: 0.6, duration: 0.4 }}
+                        className="mt-8 flex justify-center gap-2"
                     >
-                        <Check className="w-14 h-14 md:w-16 md:h-16 text-primary-600" strokeWidth={3} />
+                        {[...Array(5)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ y: 0 }}
+                                animate={{ y: [-5, 0, -5] }}
+                                transition={{
+                                    delay: 0.8 + i * 0.1,
+                                    duration: 1.5,
+                                    repeat: Infinity,
+                                    ease: 'easeInOut',
+                                }}
+                                className="w-2 h-2 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full"
+                            />
+                        ))}
                     </motion.div>
-                </motion.div>
 
-                {/* Heading */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.4 }}
-                    className="text-3xl font-bold text-gray-900 mb-3"
-                >
-                    Cancellation Confirmed
-                </motion.h1>
+                    {/* Action Buttons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.7, duration: 0.4 }}
+                        className="mt-8 space-y-3"
+                    >
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={handleTrackRefund}
+                            className={cn(
+                                'w-full py-4 px-8 rounded-full font-bold text-lg',
+                                'bg-gradient-to-r from-emerald-600 to-emerald-500',
+                                'text-white shadow-lg hover:shadow-xl',
+                                'transition-shadow duration-300'
+                            )}
+                        >
+                            Track Refund Status
+                        </motion.button>
 
-                {/* Order ID */}
-                <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.4 }}
-                    className="text-lg text-gray-600 mb-4"
-                >
-                    Order #{orderId}
-                </motion.p>
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={handlePlaceAnotherOrder}
+                            className={cn(
+                                'w-full py-4 px-8 rounded-full font-bold text-lg',
+                                'bg-white border-2 border-gray-300',
+                                'text-gray-700 hover:bg-gray-50',
+                                'transition-colors duration-300'
+                            )}
+                        >
+                            Place Another Order
+                        </motion.button>
+                    </motion.div>
+                </div>
 
-                {/* Refund Method */}
-                <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.4 }}
-                    className="text-base font-medium text-gray-900 mb-2"
-                >
-                    Refund Method: {refundMethod}
-                </motion.p>
-
-                {/* Refund Details */}
-                <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.4 }}
-                    className="text-base text-gray-600 leading-relaxed mb-8 px-4"
-                >
-                    Your refund of <span className="font-semibold text-gray-900">{formatCurrency(refundAmount)}</span> will be processed within{' '}
-                    <span className="font-medium">5-7 business days</span>.
-                </motion.p>
-
-                {/* Primary Button */}
-                <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7, duration: 0.3 }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={handleTrackRefund}
-                    className={cn(
-                        'w-full py-4 px-8 rounded-full font-bold text-lg',
-                        'bg-gradient-to-r from-primary-600 to-primary-500',
-                        'text-white shadow-lg hover:shadow-xl',
-                        'transition-shadow duration-300',
-                        'mb-4'
-                    )}
-                >
-                    Track Refund Status
-                </motion.button>
-
-                {/* Secondary Button */}
-                <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.3 }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={handleBackToOrders}
-                    className={cn(
-                        'w-full py-4 px-8 rounded-full font-bold text-lg',
-                        'bg-white border-2 border-gray-300',
-                        'text-gray-700 hover:bg-gray-50',
-                        'transition-colors duration-300'
-                    )}
-                >
-                    Back to Order Details
-                </motion.button>
+                {/* Floating Particles */}
+                {[...Array(8)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{
+                            opacity: 0,
+                            scale: 0,
+                            x: 0,
+                            y: 0,
+                        }}
+                        animate={{
+                            opacity: [0, 1, 0],
+                            scale: [0, 1, 0.5],
+                            x: Math.cos((i * Math.PI * 2) / 8) * 150,
+                            y: Math.sin((i * Math.PI * 2) / 8) * 150,
+                        }}
+                        transition={{
+                            delay: 0.8,
+                            duration: 1.5,
+                            ease: 'easeOut',
+                        }}
+                        className="absolute w-3 h-3 bg-emerald-400 rounded-full"
+                        style={{
+                            left: '50%',
+                            top: '40%',
+                        }}
+                    />
+                ))}
             </motion.div>
         </div>
     );
