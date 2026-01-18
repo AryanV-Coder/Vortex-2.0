@@ -19,9 +19,9 @@ export interface SimulationState {
     estimatedArrival: Date | null;
 }
 
-const GRACE_PERIOD_DURATION = 30; // seconds
+const GRACE_PERIOD_DURATION = 10; // seconds (reduced from 30 for faster demo)
 const PHOTO_REVIEW_DURATION = 20; // seconds
-const DELIVERY_DURATION = 60; // seconds for full delivery
+const DELIVERY_DURATION = 20; // seconds for full delivery (reduced from 60)
 
 const STORAGE_KEY = 'order_simulation_state';
 
@@ -164,8 +164,10 @@ export function useOrderSimulation(orderId: string) {
     }, []);
 
     const cancelOrder = useCallback(() => {
-        // In a real app, this would navigate to cancellation page
-        alert('Cancel order! In production, this would navigate to /order/[id]/cancel');
+        // Navigate to cancellation page
+        if (typeof window !== 'undefined') {
+            window.location.href = '/cancel-order';
+        }
     }, []);
 
     return {

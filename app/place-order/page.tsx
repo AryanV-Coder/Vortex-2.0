@@ -39,13 +39,8 @@ export default function PlaceOrderPage() {
         try {
             const { orderId } = await placeOrder();
 
-            // Success notification
-            toast.success('Order placed successfully!');
-
-            // Navigate to tracking page after a brief delay
-            setTimeout(() => {
-                router.push(`/order/${orderId}/tracking`);
-            }, 800);
+            // Navigate to confirmation screen
+            router.push(`/order-confirmation?orderId=${orderId}`);
         } catch (error) {
             toast.error('Failed to place order. Please try again.');
             setIsLoading(false);
